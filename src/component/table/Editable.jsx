@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Editable = ({editFormData ,handleEditFormChange} ) => {
+const Editable = ({editFormData ,handleEditFormChange, handleCancelClick} ) => {
   return (
     
       <tr>
@@ -17,7 +17,10 @@ const Editable = ({editFormData ,handleEditFormChange} ) => {
         <td>
         <input type='number' name='timeElapsed' required='required' placeholder='Name' value={editFormData.timeElapsed}onChange={ handleEditFormChange}/ >
         </td>
-        <td><button type='submit'>save</button></td>
+        <td>
+          <button type='submit'>save</button>
+          <button type='submit' onClick={handleCancelClick}>cancel</button>
+          </td>
       </tr>
   )
 }

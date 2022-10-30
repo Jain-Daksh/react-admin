@@ -257,18 +257,22 @@ const Table = () => {
       ticker: editFormData.ticker,
       timeElapsed: editFormData.timeElapsed
     }
-    //const newstocks = [...stock, editedStock]
-    //const index = stock.findIndex(())
-   // setEditFormData(newstocks)
-    //setEditStockID(null)
     const newContacts = [...stock];
-
     const index = stock.findIndex((value) => value.id === editStockId);
-
     newContacts[index] = editedStock;
     setStock(newContacts)
     setEditStockID(newContacts)
   }
+  const handleCancelClick = () => {
+    setEditStockID(null);
+  }; 
+
+  const handleDeleteClick = (stockID) => {
+    const newContacts = [...stock];
+    const index = stock.findIndex((stock) => stock.id === stockID);
+    newContacts.splice(index, 1);
+    setStock(newContacts);
+  };
   return (
     <div>
       <form onSubmit={handleEditFormSubmit}>
@@ -279,35 +283,20 @@ const Table = () => {
               <th className='tableCell'>Price</th>
               <th className='tableCell'>ticker</th>
               <th className='tableCell'>timeElapsed</th>
-              <th>Action</th>
+              <th className='tableCell'>Edit</th>
+              <th className='tableCell'>Delete</th>
             </tr>
           </thead>
           <tbody>
             {stock.map((value) => (
-              // <tr>
-              //   <td>
-              //     {value.company}
-              //   </td>
-              //   <td>
-              //     {value.stockPrice}
-              //   </td>
-              //   <td>
-              //     {value.ticker}
-              //   </td>
-              //   <td>
-              //     {value.timeElapsed}
-              //   </td>
-              // </tr>
               <Fragment>
-                {editStockId === value.id ? (<Editable editFormData={editFormData} handleEditFormChange={handleEditFormChange}/>) : (<Read value={value} handleEditClick={handleEditClick} />)}
+                {editStockId === value.id ? (<Editable editFormData={editFormData} handleEditFormChange={handleEditFormChange} handleCancelClick={handleCancelClick}/>) : 
+                (<Read value={value} handleEditClick={handleEditClick}   handleDeleteClick={handleDeleteClick} />)}
               </Fragment>
-
             ))}
           </tbody>
         </table>
       </form>
-
-
       <h2>Add</h2>
       <form onSubmit={handleformsubmit}>
         <input type='text' name='name' required='required' placeholder='Name' onChange={handleaddform} />

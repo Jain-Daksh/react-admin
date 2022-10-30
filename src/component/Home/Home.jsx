@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from '../Navbar/Nav'
+import Pagination from '../Pagination/Pagination'
 import Sidebar from '../sidebar/sidebar'
 import Table from '../table/Table'
 import Widget from '../Widget/Widget'
@@ -20,6 +21,7 @@ function Home() {
           <div className="listTitle">Latest Transactions</div>
           <Table />
         </div>
+        <Pagination />
       </div>
 
     </div>

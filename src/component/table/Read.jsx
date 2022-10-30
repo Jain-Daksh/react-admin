@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Read = ({value,handleEditClick}) => {
+const Read = ({value,handleEditClick ,handleDeleteClick}) => {
   return (
       <tr>
         <td>
@@ -17,6 +17,10 @@ const Read = ({value,handleEditClick}) => {
         </td>
         <td>
           <button type='button' onClick={(e) => handleEditClick(e , value)} >Edit</button>
+        </td>
+        
+        <td>
+          <button type='button' onClick={(e) => handleDeleteClick(e , value)} >delete</button>
         </td>
       </tr>
   )
