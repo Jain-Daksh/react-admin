@@ -3,6 +3,7 @@ import Nav from '../Navbar/Nav'
 import Pagination from '../Pagination/Pagination'
 import Sidebar from '../sidebar/sidebar'
 import Table from '../table/Table'
+import Test from '../test/Test'
 import Widget from '../Widget/Widget'
 import './home.css'
 function Home() {
@@ -18,10 +19,11 @@ function Home() {
           <Widget />
         </div>
         <div className="listContainer">
-          <div className="listTitle">Latest Transactions</div>
+          <div className="listTitle">All Users</div>
           <Table />
         </div>
-        <Pagination />
+        {/* <Pagination />
+        <Test /> */}
       </div>
 
     </div>

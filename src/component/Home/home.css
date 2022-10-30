@@ -29,7 +29,7 @@
 }
 .home .homeContainer {
   flex: 6;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .home .homeContainer .widgets, .home .homeContainer .charts {

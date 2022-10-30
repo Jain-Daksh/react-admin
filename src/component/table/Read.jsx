@@ -1,19 +1,51 @@
+// import React from 'react'
+
+// const Read = ({value,handleEditClick ,handleDeleteClick}) => {
+//   return (
+//       <tr>
+//         <td>
+//           {value.name}
+//         </td>
+//         <td>
+//           {value.stockPrice}
+//         </td>
+//         <td>
+//           {value.ticker}
+//         </td>
+//         <td>
+//           {value.timeElapsed}
+//         </td>
+//         <td>
+//           <button type='button' onClick={(e) => handleEditClick(e , value)} >Edit</button>
+//         </td>
+        
+//         <td>
+//           <button type='button' onClick={(e) => handleDeleteClick(e , value)} >delete</button>
+//         </td>
+//       </tr>
+//   )
+// }
+
+// export default Read
+
+
 import React from 'react'
 
-const Read = ({value,handleEditClick ,handleDeleteClick}) => {
+const Readable = ({value,handleEditClick ,handleDeleteClick}) => {
   return (
+   
       <tr>
         <td>
-          {value.name}
+          {value.first_name}
         </td>
         <td>
-          {value.stockPrice}
+          {value.last_name}
         </td>
         <td>
-          {value.ticker}
+          {value.email}
         </td>
         <td>
-          {value.timeElapsed}
+          {value.gender}
         </td>
         <td>
           <button type='button' onClick={(e) => handleEditClick(e , value)} >Edit</button>
@@ -23,7 +55,8 @@ const Read = ({value,handleEditClick ,handleDeleteClick}) => {
           <button type='button' onClick={(e) => handleDeleteClick(e , value)} >delete</button>
         </td>
       </tr>
+    
   )
 }
 
-export default Read
+export default Readable
