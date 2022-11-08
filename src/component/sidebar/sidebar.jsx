@@ -30,7 +30,7 @@ function Sidebar() {
         </ul>
       </div>
       <div className="bottom">
-        <spna>bottom</spna>
+        <span>bottom</span>
       </div>
     </div>
   )
